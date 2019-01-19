@@ -54,7 +54,7 @@ func newTAP(config Config) (ifce *Interface, err error) {
 }
 
 func newTUN(config Config) (ifce *Interface, err error) {
-	fdInt, err := syscall.Open("/dev/net/tun", os.O_RDWR|syscall.O_NONBLOCK, 0)
+	fdInt, err := syscall.Open("/dev/net/tun", os.O_RDWR, 0)
 	if err != nil {
 		return nil, err
 	}
